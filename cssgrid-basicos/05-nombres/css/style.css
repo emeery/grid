@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+h1 {
+    margin: 0;
+}
+img {
+    width: 100%;
+}
+
+.contenedor {
+    height: 100vh;
+    width: 900px;
+    margin: 0 auto;
+    display: grid;
+    /* filas / columnas */
+    grid: 100px auto 100px / repeat(4, 25%);
+}
+
+.header {
+    background-color: coral;
+    color: white;
+    text-align: center;
+    grid-column: 1 / 5;
+}
+
+.contenido-principal {
+    background-color: darkred;
+    grid-column: 1 / 4;
+}
+.sidebar {
+    background-color: olive;
+}
+.footer {
+    background-color: navy;
+    grid-column: 1 / 5;
+}
+
+/* index3.html */
+
+.contenedor-media {
+    margin: 0 auto;
+    max-width: 800px;
+    display: grid;
+    /* grid-template-areas:
+    "titulo titulo titulo titulo"
+    "imagen desc desc desc";
+    grid-gap: 1rem; */
+    grid-template-areas: 
+    "titulo" "slogan" "info" "imagen" "entrada";
+}
+@media screen and (min-width:768px) {
+    .contenedor-media {
+        grid-template-areas:
+            "titulo titulo"
+            "imagen slogan"
+            "imagen info"
+            "entrada entrada"
+    }
+}
+.titulo {
+   background-color: salmon;
+   grid-area: titulo;
+}
+.descripcion {
+    /* grid-area: desc; */
+    background-color: slategray;
+    color: white;
+}
+.imagen {
+    grid-area: imagen;
+}
+.slogan {
+    grid-area: slogan;
+}
+.info {
+    grid-area: info;
+}
+.entrada {
+    grid-area:entrada;
+}
